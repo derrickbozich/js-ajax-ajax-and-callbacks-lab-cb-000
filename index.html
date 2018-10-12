@@ -22,10 +22,12 @@
     <main id="main">
       <div id="errors"></div>
     </main>
+    <a href="#">Search</a>
     <form onsubmit="searchRepositories();return false;">
       <input id="searchTerms" type="text">
       <input type="submit">
     </form>
+    
     <div class="flexbox-container">
       <div>
         <h3>Repositories</h3>
@@ -51,7 +53,7 @@
         <small>{{description}}</small><br>
         <a href="{{html_url}}">{{html_url}}</a><br>
         <a href="{{owner.url}}">{{owner.login}}</a><br>
-        <a data-repo="{{name}}" data-username="{{owner.login}}" href="#" onclick="showCommits(this)">Show Commits</a>
+        <a data-repository="{{name}}" data-owner="{{owner.login}}" href="#" onclick="showCommits(this)">Show Commits</a>
       </div>
       {{/each}}
     </script>
